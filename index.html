@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Year Month Day Date Picker Example</title>
+    <link rel="stylesheet" href="date-picker.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="example-container">
+        <header>
+            <h1>Year Month Day Date Picker</h1>
+            <p>A lightweight, customizable year, month and day picker component</p>
+        </header>
+
+        <main>
+            <section class="example-section">
+                <h2>Basic Usage</h2>
+                <div class="example-card">
+                    <div class="example-info">
+                        <h3>Open Picker</h3>
+                        <p>Click button below to open date picker.</p>
+                        <button id="open-picker-btn" class="primary-btn">
+                            Select Date
+                        </button>
+                        <div id="selected-date" class="selected-date-display">
+                            Selected: <span id="date-result">Not selected</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="example-section">
+                <h2>Language Support</h2>
+                <div class="example-card">
+                    <div class="example-info">
+                        <h3>Change Language</h3>
+                        <p>Select a different language to see picker adapt.</p>
+                        <div class="language-selector">
+                            <select id="language-select" class="language-select">
+                                <option value="en">English</option>
+                                <option value="zh">中文</option>
+                                <option value="ja">日本語</option>
+                                <option value="ko">한국어</option>
+                                <option value="es">Español</option>
+                                <option value="fr">Français</option>
+                                <option value="de">Deutsch</option>
+                                <option value="ar">العربية</option>
+                                <option value="hi">हिन्दी</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+    </div>
+
+    <script src="date-formatter.js"></script>
+    <script src="date-picker.js"></script>
+    <script src="example.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+{
+  "name": "year-month-day-date-picker",
+  "version": "1.0.0",
+  "description": "A lightweight, customizable year, month, and day picker component",
+  "main": "date-picker.js",
+  "scripts": {
+    "example": "echo 'Open index.html in your browser to see the example'",
+    "test": "echo 'No tests configured'"
+  },
+  "keywords": [
+    "date-picker",
+    "year-month-day-picker",
+    "month-picker",
+    "year-picker",
+    "calendar",
+    "picker",
+    "modal",
+    "mobile",
+    "touch"
+  ],
+  "author": "",
+  "license": "MIT",
+  "files": [
+    "date-picker.js",
+    "date-picker.css",
+    "date-formatter.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": {
+    "url": ""
+  },
+  "homepage": ""
+}

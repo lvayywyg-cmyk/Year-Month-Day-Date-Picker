@@ -1,0 +1,250 @@
+/* Year Month Picker Component Styles */
+
+/* Modal Container */
+.generic-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.generic-modal.show {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    opacity: 1;
+}
+
+.generic-modal.hide {
+    display: none;
+    opacity: 0;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    background: #ffffff;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(100%);
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    max-height: 80vh;
+    overflow: hidden;
+}
+
+.generic-modal.show .modal-content {
+    transform: translateY(0);
+}
+
+/* Modal Header */
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px 16px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.modal-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+/* Confirm Button */
+.modal-confirm {
+    padding: 10px 24px;
+    background: #1675e0;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.modal-confirm:hover {
+    background: #0d63c9;
+}
+
+.modal-confirm:active {
+    background: #0a4f99;
+}
+
+/* Modal Body */
+.modal-body {
+    max-height: 50vh;
+    overflow-y: auto;
+    padding: 0;
+}
+
+/* Picker Columns */
+.picker-columns {
+    display: flex;
+    height: 50vh;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.picker-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.picker-column:last-child {
+    border-right: none;
+}
+
+/* Wheel Container */
+.picker-wheel-container {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Wheel Mask */
+.picker-wheel-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0) 30%,
+        rgba(255, 255, 255, 0) 70%,
+        rgba(255, 255, 255, 1) 100%
+    );
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Wheel */
+.picker-wheel {
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding: calc(50vh / 2 - 28px) 0;
+    scroll-behavior: auto;
+}
+
+/* Hide Scrollbar */
+.picker-wheel::-webkit-scrollbar {
+    display: none;
+}
+
+.picker-wheel {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Wheel Items */
+.picker-wheel-item {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    position: relative;
+}
+
+.picker-wheel-item .item-text {
+    font-size: 18px;
+    color: #333;
+    font-weight: 400;
+}
+
+.picker-wheel-item.selected .item-text {
+    color: #1675e0;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .modal-content {
+        max-width: 100%;
+        border-radius: 16px 16px 0 0;
+    }
+
+    .modal-header {
+        padding: 16px 20px 12px;
+    }
+
+    .modal-title {
+        font-size: 18px;
+    }
+
+    .modal-confirm {
+        padding: 8px 20px;
+        font-size: 13px;
+    }
+
+    .picker-columns {
+        width: 90%;
+    }
+
+    .picker-wheel-item .item-text {
+        font-size: 16px;
+    }
+
+    .picker-wheel-item.selected .item-text {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-header {
+        padding: 14px 16px 10px;
+    }
+
+    .modal-title {
+        font-size: 16px;
+    }
+
+    .modal-confirm {
+        padding: 6px 16px;
+        font-size: 12px;
+    }
+
+    .picker-columns {
+        width: 80%;
+    }
+}
+
+/* Animations */
+@keyframes slideDown {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(100%);
+    }
+}
+
+.generic-modal.closing .modal-content {
+    animation: slideDown 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
