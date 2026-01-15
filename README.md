@@ -1,6 +1,12 @@
-# Year Month Day Date Picker
+# Revised Documentation with Additional Project Context
+<img width="662" height="1436" alt="image" src="https://github.com/user-attachments/assets/331d51c0-9bfd-4176-bbc2-9b6924fc39be" />
+
+## Year Month Day Date Picker
 
 A lightweight, customizable year, month, and day picker component for web applications.
+
+### Project Background
+This date picker component was originally developed for my **Sudoku100** project — a free, online sudoku game platform for sudoku enthusiasts of all skill levels. If you're interested in sudoku or looking for a fun online puzzle game, feel free to check it out at: https://www.sudoku100.com
 
 ## Usage
 
